@@ -247,13 +247,8 @@ document.querySelector('.b-14').addEventListener('click', function () {
 // Task 15
 // Напишите стрелочную функцию, которая проверяет что пользователь ввел в input. Если число - возвращает true, если строку - false. 
 
-const t15 = (...arr) => {
-    console.log(typeof arr[0])
-    if(typeof num === 'number'){
-        return true
-    } else if(typeof num === 'string'){
-        return false
-    }
+const t15 = (num) => {
+   return isNaN(num)
 }
 
 document.querySelector('.b-15').addEventListener('click', function () {
@@ -264,7 +259,11 @@ document.querySelector('.b-15').addEventListener('click', function () {
 // Task 16
 // Напишите стрелочную функцию t16, которая проверяет что в массиве находится четное количество элементов. Возвращает true, false.
 
-// const t16
+const t16 = (...arr) => {
+    if(arr[0].length % 2 === 0){
+        return true
+    }else { return false}
+}
 
 document.querySelector('.b-16').addEventListener('click', function () {
     document.querySelector('.out-16').textContent = t16([4, 5, 6]);
@@ -274,10 +273,30 @@ document.querySelector('.b-16').addEventListener('click', function () {
 // Task 17
 // Напишите стрелочную функцию t17, которая проверяет что в массиве находятся только числа. Если да - то возвращает true, если нет, false.
 
-// const t17
+const t17 = (...arr) => {
+    // let res = 0
+    // arr[0].filter(item => {
+    //     console.log(typeof item)
+    //     if(typeof item === 'number'){
+    //         return res++
+    //     }
+    // })
+    // if(arr[0].length === res){
+    //     return true
+    // }else { return false }
+   const res = arr[0].reduce((acum,item) => {
+        if(typeof item === 'number'){
+         acum++
+        }
+        if(arr[0].length === acum){
+                return true
+            }else { return false }
+    })
+   return res
+}
 
 document.querySelector('.b-17').addEventListener('click', function () {
-    document.querySelector('.out-17').textContent = t17([4, 5, 6]);
+    document.querySelector('.out-17').textContent = t17([6, 7, 8]);
 })
 
 
