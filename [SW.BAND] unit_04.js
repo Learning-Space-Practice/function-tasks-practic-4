@@ -273,15 +273,16 @@ document.querySelector('.b-16').addEventListener('click', function () {
 // Task 17
 // Напишите стрелочную функцию t17, которая проверяет что в массиве находятся только числа. Если да - то возвращает true, если нет, false.
 
-const t17 = (...arr) => {
+const t17 = (arr) => {
     let res = 0
-    arr[0].filter(item => {
+    arr.filter(item => {
         console.log(typeof item)
         if(typeof item === 'number'){
             return res++
         }
     })
-    if(arr[0].length === res){
+console.log(typeof arr)
+    if(arr.length === res){
         return true
     }else { return false }
 }
@@ -297,7 +298,7 @@ const t17 = (...arr) => {
 // }
 
 document.querySelector('.b-17').addEventListener('click', function () {
-    document.querySelector('.out-17').textContent = t17([6, 9, 8]);
+    document.querySelector('.out-17').textContent = t17([6, 7, 8]);
 })
 
 
@@ -307,12 +308,12 @@ document.querySelector('.b-17').addEventListener('click', function () {
 const t18 = (arr,num) => {
     console.log(arr, num)
 
-//   for(let i = 0; i < arr.length; i++){
-//       console.log(arr[i],num)
-//     if(arr[i] === num){
-//         return true
-//     } else { return false }
-//   }
+  for(let i = 0; i < arr.length; i++){
+      console.log(arr[i],num)
+    if(arr[i] === num){
+        return true
+    } else { return false }
+  }
 }
 
 
@@ -362,8 +363,7 @@ return res
     // keys.forEach(item => {
     //     if(obj[item] === num){
     //         return res = true
-    //     } else { return res = false}
-        
+    //     } else { return res = false}      
     // })
     // return res
 }
