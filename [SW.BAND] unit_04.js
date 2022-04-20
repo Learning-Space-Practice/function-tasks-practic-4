@@ -307,19 +307,24 @@ document.querySelector('.b-17').addEventListener('click', function () {
 
 const t18 = (arr,num) => {
     console.log(arr, num)
+    const res = arr.reduce((accum, item) => {
+        if(item === num){
+            console.log(true)
+        }
+    })
+//   for(let i = 0; i < arr.length; i++){
+//       console.log(arr[i],num)
+//     if(arr[i] === num){
+//         return true
+//     } else { return false }
+//   }
 
-  for(let i = 0; i < arr.length; i++){
-      console.log(arr[i],num)
-    if(arr[i] === num){
-        return true
-    } else { return false }
-  }
 }
 
 
 
 document.querySelector('.b-18').addEventListener('click', function () {
-    document.querySelector('.out-18').textContent = t18([1, 5, 4], 6);
+    document.querySelector('.out-18').textContent = t18([6, 5, 4, 6], 6);
 })
 
 // Task 19
