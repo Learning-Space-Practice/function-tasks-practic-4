@@ -347,32 +347,23 @@ document.querySelector('.b-19').addEventListener('click', function () {
 
 const j20 = {
     h: 4,
-    j: 7,
+    j: 6,
     k: 22,
-    m: 7
+    m: 8
 }
 
 const t20 = (obj,num) => {
  const keys = Object.keys(obj)
- const res = keys.reduce((accum, item) => {
-    if(obj[item] === num){
-    return accum = true
-    } else { return accum = false}
- })
 
-return res
-
-    // console.log(Object.keys(obj))
-    // let res = false
-    // const keys = Object.keys(obj)
-    // keys.forEach(item => {
-    //     if(obj[item] === num){
-    //         return res = true
-    //     } else { return res = false}      
-    // })
-    // return res
+ console.log(keys)
+ 
+ for(let i = 0; i < keys.length; i++){
+     if(j20[keys[i]] === num){
+         return keys[i]
+     }
 }
-
+return false
+}
 document.querySelector('.b-20').addEventListener('click', function () {
     document.querySelector('.out-20').textContent = t20(j20, 7);
 })
